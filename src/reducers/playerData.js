@@ -6,7 +6,7 @@ const defaultState = {
   player: new Player()
 };
 
-export const playerSetup = (state = defaultState, action) => {
+const playerData = (state = defaultState, action) => {
   switch (action.type) {
     case ActionTypes.CREATE_INITIAL_PLAYER: {
       return { ...state };
@@ -29,3 +29,5 @@ export const playerSetup = (state = defaultState, action) => {
       return state;
   }
 };
+
+export default playerData;

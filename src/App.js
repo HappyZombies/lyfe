@@ -47,7 +47,7 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-  player: state.playerSetup.player
+  player: state.playerData.player
 });
 
 const mapDispatchToProps = dispatch =>

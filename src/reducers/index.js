@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 
-import { playerSetup } from "./playerSetup";
+import playerData from "./playerData";
 
 export default combineReducers({
-  playerSetup
+  playerData
 });

@@ -4,14 +4,14 @@ export default {
     value: 5,
     valueDescription: {
       1: "Short Bus",
-      2: "Dumbass",
+      2: "Dingus",
       3: "Numbnut",
       4: "Knuckle Head",
       5: "Knowdledgeable",
       6: "Nerd",
-      7: "Smart Ass",
+      7: "Mr. Smarts",
       8: "1600 on SAT",
-      9: "Genious",
+      9: "Genius",
       10: "Einstein"
     },
     description:
@@ -39,19 +39,19 @@ export default {
     name: "Charisma",
     value: 5,
     valueDescription: {
-      1: "Hates everyone.",
+      1: "Misanthrope",
       2: "Weirdo",
       3: "Creepy Mortician",
-      4: "Annoying Librarian",
+      4: "Librarian",
       5: "Janitor",
       6: "Cars Salesman",
       7: "Ambassador",
       8: "Celebrity",
       9: "President",
-      10: "Jim Jones"
+      10: "Cult Leader"
     },
     description:
-      "With high charisma, you can presuaded, impress and maybe even get away out of situations since people just like you so much!"
+      "With high charisma, you can presuaded, impress and maybe even get away out of situations since people just like you so much."
   },
   FIT: {
     name: "Fitness",
@@ -95,7 +95,7 @@ export default {
     valueDescription: {
       1: "Suicidal",
       2: "No will to live",
-      3: "Depressed",
+      3: "Clinically Depressed",
       4: "Few bumps along the road",
       5: "OK",
       6: "Motivated",
