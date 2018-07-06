@@ -9,6 +9,6 @@ export function createInitialPlayer() {
 export function updatePlayerStat(stat, value) {
   return {
     type: ActionTypes.UPDATE_STAT,
-    payload: { stat: stat, value: value }
+    data: { stat: stat, value: value }
   };
 }

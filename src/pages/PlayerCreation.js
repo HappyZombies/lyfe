@@ -1,14 +1,23 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { createInitialPlayer, updatePlayerStat } from "./actions/playerActions";
-import "./App.css";
+import { Redirect } from "react-router-dom";
 
-class App extends Component {
+import {
+  createInitialPlayer,
+  updatePlayerStat
+} from "../actions/playerActions";
+import ButtonLink from "../components/ButtonLink";
+
+import "../assets/styles/App.css";
+
+class PlayerCreation extends Component {
   constructor(props) {
     super(props);
+    console.log(props);
     props.createInitialPlayer();
   }
+
   statDropDown = () => {
     return Object.keys(this.props.player.stats).map((key, index) => {
       const STAT = this.props.player.stats[key];
@@ -34,6 +43,7 @@ class App extends Component {
       );
     });
   };
+
   render() {
     console.log(this.props.player);
     return (
@@ -41,6 +51,8 @@ class App extends Component {
         <h1>Stats</h1>
         <i>Points Available: {this.props.player.points}</i>
         {this.statDropDown()}
+        <br />
+        <ButtonLink to="/">Go Back</ButtonLink>
       </div>
     );
   }
@@ -62,4 +74,4 @@ const mapDispatchToProps = dispatch =>
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(App);
+)(PlayerCreation);

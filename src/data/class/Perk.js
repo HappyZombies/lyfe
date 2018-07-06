@@ -1,3 +1,5 @@
+import CardType from "./CardType";
+
 /**
  * The base class to create a perk along with the information related to it.
  */
