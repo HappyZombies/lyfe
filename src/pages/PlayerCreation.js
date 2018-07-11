@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { Redirect } from "react-router-dom";
+import store from "store";
+import { PLAYER } from "../data/Constants";
 
 import {
   createInitialPlayer,
@@ -14,20 +15,36 @@ import "../assets/styles/App.css";
 class PlayerCreation extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
+    // yuck
+    if (store.get(PLAYER)) {
+      if (
+        !window.confirm(
+          "WARNING: There is already a saved player, starting a new game will delete all save data and this character. Are you sure you want to continue?"
+        )
+      ) {
+        props.history.push("");
+        return;
+      } else {
+        // delete save data.
+        store.clearAll();
+        props.createInitialPlayer(true);
+        return;
+      }
+    }
     props.createInitialPlayer();
   }
 
   statDropDown = () => {
     return Object.keys(this.props.player.stats).map((key, index) => {
-      const STAT = this.props.player.stats[key];
+      const PLAYER_STAT = this.props.player.stats[key];
+      const STAT_INFO = this.props.statsInfo[key];
       return (
         <div key={index}>
-          <h3>{STAT.name}</h3>
-          <p>{STAT.description}</p>
+          <h3>{STAT_INFO.name}</h3>
+          <p>{STAT_INFO.description}</p>
           <input
             type="number"
-            value={STAT.value}
+            value={PLAYER_STAT.value}
             onChange={e => {
               this.props.updatePlayerStat(key, e.target.value);
             }}
@@ -35,8 +52,8 @@ class PlayerCreation extends Component {
             max="10"
           />
           <b>
-            ----{STAT.valueDescription
-              ? STAT.valueDescription[STAT.value]
+            ----{STAT_INFO.valueDescription
+              ? STAT_INFO.valueDescription[PLAYER_STAT.value]
               : null}
           </b>
         </div>
@@ -44,8 +61,11 @@ class PlayerCreation extends Component {
     });
   };
 
+  onContinueClick = () => {
+    this.props.history.push("perks");
+  };
+
   render() {
-    console.log(this.props.player);
     return (
       <div className="App">
         <h1>Stats</h1>
@@ -53,13 +73,17 @@ class PlayerCreation extends Component {
         {this.statDropDown()}
         <br />
         <ButtonLink to="/">Go Back</ButtonLink>
+        <button type="button" onClick={this.onContinueClick}>
+          Continue
+        </button>
       </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  player: state.playerData.player
+  player: state.playerData.player,
+  statsInfo: state.playerData.statsInfo
 });
 
 const mapDispatchToProps = dispatch =>

@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import ButtonLink from "../components/ButtonLink";
-import { Link } from "react-router-dom";
 import store from "store";
+import { PLAYER } from "../data/Constants";
 
 class Home extends Component {
   onNewGameCLick = () => {
-    const savedData = store.get("savedGame");
-    console.log(this.props);
     this.props.history.push("new");
+  };
+  onContinueCLick = () => {
+    this.props.history.push("game");
   };
   render() {
     return (
@@ -15,9 +15,12 @@ class Home extends Component {
         <button type="button" onClick={this.onNewGameCLick}>
           New Game
         </button>
-        {/* <ButtonLink to="game" disabled={savedData === undefined}>
+        <button
+          disabled={store.get(PLAYER) === undefined}
+          onClick={this.onContinueCLick}
+        >
           Continue
-        </ButtonLink> */}
+        </button>
       </div>
     );
   }

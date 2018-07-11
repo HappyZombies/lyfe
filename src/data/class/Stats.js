@@ -17,24 +17,6 @@ export default {
     description:
       "Intelligence determines how well your mental capacity is and how easily you can problem solve."
   },
-  LUCK: {
-    name: "Luck",
-    value: 5,
-    valueDescription: {
-      1: "Black Cats everywhere.",
-      2: "Friday the 13th",
-      3: "Broken Mirrors",
-      4: "Spilled Salt",
-      5: "Coin Toss",
-      6: "Rabbits Foot",
-      7: "Lucky Number 7",
-      8: "Four Leaf Clover",
-      9: "Wishbone",
-      10: "100 White Elephants"
-    },
-    description:
-      "Luck dictates how much good luck you will have or how much of it is bad."
-  },
   CHAR: {
     name: "Charisma",
     value: 5,
@@ -71,6 +53,24 @@ export default {
     description:
       "Fitness determines how well your overall strength, endurance and althetlic skills are."
   },
+  WEAP: {
+    name: "Weapons",
+    value: 5,
+    valueDescription: {
+      1: "Blind Stormtrooper",
+      2: "Missing Arm",
+      3: "Butter Fingers",
+      4: "Sweaty Palms",
+      5: "Average Joe",
+      6: "Steady Aim",
+      7: "Gunslinger",
+      8: "Marksman",
+      9: "Sharpshooter",
+      10: "James Bond"
+    },
+    description:
+      "The weapon stat determines how good you are with using weapons."
+  },
   APP: {
     name: "Appearance",
     value: 5,
@@ -106,5 +106,23 @@ export default {
     },
     description:
       "Will determines how much you care about life in general, your will to live basically. This determines how much actions you can perform per year along with other things."
+  },
+  LUCK: {
+    name: "Luck",
+    value: 5,
+    valueDescription: {
+      1: "Black Cats everywhere.",
+      2: "Friday the 13th",
+      3: "Broken Mirrors",
+      4: "Spilled Salt",
+      5: "Coin Toss",
+      6: "Rabbits Foot",
+      7: "Lucky Number 7",
+      8: "Four Leaf Clover",
+      9: "Wishbone",
+      10: "100 White Elephants"
+    },
+    description:
+      "Luck dictates how much good luck you will have or how much of it is bad."
   }
 };
