@@ -1,5 +1,7 @@
+import * as StatType from "./StatType";
+
 export default {
-  INT: {
+  [StatType.INT]: {
     name: "Intelligence",
     value: 5,
     valueDescription: {
@@ -17,7 +19,7 @@ export default {
     description:
       "Intelligence determines how well your mental capacity is and how easily you can problem solve."
   },
-  CHAR: {
+  [StatType.CHAR]: {
     name: "Charisma",
     value: 5,
     valueDescription: {
@@ -35,7 +37,7 @@ export default {
     description:
       "With high charisma, you can presuaded, impress and maybe even get away out of situations since people just like you so much."
   },
-  FIT: {
+  [StatType.FIT]: {
     name: "Fitness",
     value: 5,
     valueDescription: {
@@ -53,7 +55,7 @@ export default {
     description:
       "Fitness determines how well your overall strength, endurance and althetlic skills are."
   },
-  WEAP: {
+  [StatType.WEAP]: {
     name: "Weapons",
     value: 5,
     valueDescription: {
@@ -71,7 +73,7 @@ export default {
     description:
       "The weapon stat determines how good you are with using weapons."
   },
-  APP: {
+  [StatType.APP]: {
     name: "Appearance",
     value: 5,
     valueDescription: {
@@ -89,7 +91,7 @@ export default {
     description:
       "Appearance determines how well people will respond to you. You might get away with a few things just because of your looks!"
   },
-  WILL: {
+  [StatType.WILL]: {
     name: "Will",
     value: 5,
     valueDescription: {
@@ -107,7 +109,7 @@ export default {
     description:
       "Will determines how much you care about life in general, your will to live basically. This determines how much actions you can perform per year along with other things."
   },
-  LUCK: {
+  [StatType.LUCK]: {
     name: "Luck",
     value: 5,
     valueDescription: {

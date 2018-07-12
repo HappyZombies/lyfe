@@ -1,4 +1,6 @@
 import PerkType from "../class/PerkType";
+import * as StatType from "../class/StatType";
+
 export default [
   {
     id: "goodgenetics",
@@ -8,9 +10,9 @@ export default [
       "Lucky you! You have a set of wonderful genetics, you get a boost of 5% on every stat!",
     icon: "",
     statReq: [
-      { stat: "INT", value: 7 },
-      { stat: "APP", value: 7 },
-      { stat: "FIT", value: 7 }
+      { stat: StatType.INT, value: 7 },
+      { stat: StatType.APP, value: 7 },
+      { stat: StatType.FIT, value: 7 }
     ],
     action: perkData => {
       return 0.05;
@@ -23,7 +25,7 @@ export default [
     description:
       "You gave up trying to understand the world around you, so you just hit everything you see. Physical attack cards now do 15% more damage.",
     icon: "",
-    statReq: [{ stat: "INT", value: 2 }, { stat: "FIT", value: 10 }],
+    statReq: [{ stat: StatType.INT, value: 2 }, { stat: StatType.INT, value: 10 }],
     action: perkData => {
       return 0.15;
     }
@@ -35,7 +37,7 @@ export default [
     description:
       "You are a natural born shooter, you seem to never miss a target! Chances of hitting a target with a weapons card is increased by 15%",
     icon: "",
-    statReq: [{ stat: "INT", value: 8 }, { stat: "WEAP", value: 8 }],
+    statReq: [{ stat: StatType.INT, value: 8 }, { stat: StatType.WEAP, value: 8 }],
     action: perkData => {
       return 0.1;
     }
@@ -48,13 +50,13 @@ export default [
       "Mother nature has a crude way of making jokes, and you are the latest one. Luckily, you now have a suicide button provided so you can stop wasting other peoples air.",
     icon: "",
     statReq: [
-      { stat: "INT", value: 1 },
-      { stat: "CHAR", value: 1 },
-      { stat: "FIT", value: 1 },
-      { stat: "WEAP", value: 1 },
-      { stat: "APP", value: 1 },
-      { stat: "WILL", value: 1 },
-      { stat: "LUCK", value: 1 }
+      { stat: StatType.INT, value: 1 },
+      { stat: StatType.CHAR, value: 1 },
+      { stat: StatType.FIT, value: 1 },
+      { stat: StatType.WEAP, value: 1 },
+      { stat: StatType.APP, value: 1 },
+      { stat: StatType.WILL, value: 1 },
+      { stat: StatType.LUCK, value: 1 }
     ],
     action: perkData => {
       return 0.1;
@@ -67,7 +69,7 @@ export default [
     description:
       "You may be ugly, but at least you got the brains! Gain 3% increase on Status Damaging Cards.",
     icon: "",
-    statReq: [{ stat: "INT", value: 10 }, { stat: "APP", value: 1 }],
+    statReq: [{ stat: StatType.INT, value: 10 }, { stat: StatType.APP, value: 2 }],
     action: perkData => {
       return 0.03;
     }
@@ -101,7 +103,7 @@ export default [
     description:
       "You're such a smooth talker that you can sell ice to an escomo! Speech checks are increased by 10%",
     icon: "",
-    statReq: [{ stat: "CHAR", value: 8 }, { stat: "APP", value: 7 }],
+    statReq: [{ stat: StatType.CHAR, value: 8 }, { stat: StatType.APP, value: 7 }],
     action: perkData => {
       return 0.1;
     }
@@ -111,9 +113,9 @@ export default [
     name: "Lucky Hand",
     perkType: PerkType.INGAME,
     description:
-      "Due to your swiftness and skillfilness, you can deal one extra card each turn.",
+      "Due to your swiftness and skillfulness, you can deal one extra card each turn.",
     icon: "",
-    statReq: [{ stat: "LUCK", value: 8 }, { stat: "INT", value: 8 }],
+    statReq: [{ stat: StatType.LUCK, value: 8 }, { stat: StatType.INT, value: 8 }],
     action: perkData => {
       return 0.1;
     }
@@ -127,6 +129,26 @@ export default [
     icon: "",
     action: perkData => {
       return 0.1;
+    }
+  },
+  {
+    id: "averagejoe",
+    name: "Average Joe",
+    perkType: PerkType.STAT,
+    description:
+      "You are just average at everything. In fact very average, in every category. Remarkble... truly. All of your stats go up by one point by how average you are because we feel bad.",
+    icon: "",
+    statReq: [
+      { stat: StatType.INT, value: 5 },
+      { stat: StatType.CHAR, value: 5 },
+      { stat: StatType.FIT, value: 5 },
+      { stat: StatType.WEAP, value: 5 },
+      { stat: StatType.APP, value: 5 },
+      { stat: StatType.WILL, value: 5 },
+      { stat: StatType.LUCK, value: 5 }
+    ],
+    action: perkData => {
+      return 1;
     }
   }
 ];
