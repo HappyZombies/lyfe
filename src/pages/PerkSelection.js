@@ -4,6 +4,7 @@ import { bindActionCreators } from "redux";
 
 import { updatePlayerPerks } from "../actions/playerActions";
 import { createInitialPerks } from "../actions/perkActions";
+import { menuSelectAudio } from "../utils"
 
 import "../assets/styles/App.css";
 
@@ -11,6 +12,7 @@ class PerkSelection extends Component {
   constructor(props) {
     super(props);
     props.createInitialPerks(props.player.stats);
+    this.menuChange = menuSelectAudio();
   }
 
   displayPerks = () => {
@@ -31,7 +33,7 @@ class PerkSelection extends Component {
       <div className="App">
         <h1>Perks</h1>
         {this.displayPerks()}
-        <button type="button">Continue</button>
+        <button type="button" onClick={()=>{this.menuChange.play()}}>Continue</button>
       </div>
     );
   }

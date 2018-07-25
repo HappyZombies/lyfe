@@ -1,9 +1,15 @@
 import React, { Component } from "react";
 import store from "store";
 import { PLAYER } from "../data/Constants";
+import { menuSelectAudio } from "../utils"
 
 class Home extends Component {
+  constructor() {
+    super();
+    this.menuChange = menuSelectAudio();
+  }
   onNewGameCLick = () => {
+    this.menuChange.play();
     this.props.history.push("new");
   };
   onContinueCLick = () => {

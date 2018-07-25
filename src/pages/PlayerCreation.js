@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import store from "store";
 import { PLAYER } from "../data/Constants";
+import { menuSelectAudio } from "../utils"
 
 import {
   createInitialPlayer,
@@ -32,6 +33,7 @@ class PlayerCreation extends Component {
       }
     }
     props.createInitialPlayer();
+    this.menuChange = menuSelectAudio();
   }
 
   statDropDown = () => {
@@ -62,6 +64,7 @@ class PlayerCreation extends Component {
   };
 
   onContinueClick = () => {
+    this.menuChange.play();
     this.props.history.push("perks");
   };
 
